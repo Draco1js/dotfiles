@@ -3,4 +3,4 @@ maximize = true
 working-directory = home
 window-height = 1000
 window-width = 2000
-
+background-opacity = 0.99
