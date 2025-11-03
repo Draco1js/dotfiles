@@ -5,7 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # <!========== Set directory for zinit and it's plugins ==========!>
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -31,6 +33,7 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::sudo
 
 # <!========== Load Completions ==========!>
+fpath=(/Users/aayan/.docker/completions $fpath)
 autoload -U compinit && compinit
 
 zinit cdreplay -q
@@ -78,10 +81,17 @@ eval "$(zoxide init --cmd cd zsh)"
 export PATH="/opt/homebrew/Cellar/john-jumbo/1.9.0_1/share/john/:$PATH"
 
 #Inserted by PNPM Cli
-export PNPM_HOME="/Users/aayan/Library/pnpm"
+export PNPM_HOME="~/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # Inserted by PNPM Cli
 
+
+# bun completions
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
