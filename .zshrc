@@ -92,6 +92,11 @@ esac
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
+# ngrok cli completion
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+fi
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

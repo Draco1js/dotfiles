@@ -4,3 +4,7 @@ working-directory = home
 window-height = 1000
 window-width = 2000
 background-opacity = 0.99
+keybind = shift+up=scroll_page_lines:-1
+keybind = shift+down=scroll_page_lines:1
+shell-integration-features = ssh-terminfo,ssh-env
+
