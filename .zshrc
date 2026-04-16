@@ -78,7 +78,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 # <!========== Path Stuff ==========!>
-export PATH="/opt/homebrew/Cellar/john-jumbo/1.9.0_1/share/john/:$PATH"
+export PATH="$HOME/go/bin:/opt/homebrew/Cellar/john-jumbo/1.9.0_1/share/john/:$PATH"
 
 #Inserted by PNPM Cli
 export PNPM_HOME="~/Library/pnpm"
@@ -101,3 +101,9 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:/usr/games"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Added by Antigravity
+export PATH="/Users/aayan/.antigravity/antigravity/bin:$PATH"
